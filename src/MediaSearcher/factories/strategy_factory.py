@@ -10,7 +10,7 @@ from abc import ABC, abstractmethod
 
 class MediaServiceFactory(ABC):
     @abstractmethod
-    def get_media_service(service: str):
+    def get_search_strategy(api_key: str, content_type: str):
         pass
 
 
