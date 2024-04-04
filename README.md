@@ -64,7 +64,7 @@ images = search_cli.search(params, 'hybrid')
 
 ### ⚡️Hybrid Mode
 
-![Result](../media/res.png)
+![Result](media/res.png)
 
 ## 💻代码结构
 
