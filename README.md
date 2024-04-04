@@ -62,65 +62,63 @@ images = search_cli.search(params, 'hybrid')
 
 ```mermaid
 classDiagram
+    %% Interface
     class SearchStrategy {
       <<interface>>
       +search(query: dict) dict
       +asearch(query: dict) dict
     }
 
+    %% Concrete Strategies
     class PixabayStrategy {
       +search(query: dict) dict
       +asearch(query: dict) dict
     }
-
     class UnsplashStrategy {
       +search(query: dict) dict
       +asearch(query: dict) dict
     }
-
     class PexelsStrategy {
       +search(query: dict) dict
       +asearch(query: dict) dict
     }
-    
+
+    %% Future Strategies
+    %% Use comments to mark not yet implemented features
     class EngineBasedSearchStrategy {
-      +NOT_YET_IMPLEMENT() SearchStrategy
+      +NOT_YET_IMPLEMENTED() SearchStrategy
     }
-    
     class ModelGeneratedSearchStrategy {
-      +NOT_YET_IMPLEMENT() SearchStrategy
+      +NOT_YET_IMPLEMENTED() SearchStrategy
     }
 
+    %% Abstract Factory
     class MediaServiceFactory {
       <<abstract>>
       +get_search_strategy() SearchStrategy
     }
 
+    %% Concrete Factories
     class PixabayFactory {
       +get_search_strategy() SearchStrategy
     }
-
     class UnsplashFactory {
       +get_search_strategy() SearchStrategy
     }
-
     class PexelsFactory {
       +get_search_strategy() SearchStrategy
     }
 
-    
-
+    %% Relationships
     SearchStrategy <|.. PixabayStrategy: implements
     SearchStrategy <|.. UnsplashStrategy: implements
     SearchStrategy <|.. PexelsStrategy: implements
-    SearchStrategy <|.. EngineBasedSearchStrategy: implements
-    SearchStrategy <|.. ModelGeneratedSearchStrategy: implements
+    SearchStrategy <|.. EngineBasedSearchStrategy: Not yet implemented
+    SearchStrategy <|.. ModelGeneratedSearchStrategy: Not yet implemented
 
     MediaServiceFactory <|-- PixabayFactory: extends
     MediaServiceFactory <|-- UnsplashFactory: extends
     MediaServiceFactory <|-- PexelsFactory: extends
-
-    
 
 ```
 
