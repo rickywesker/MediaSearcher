@@ -11,18 +11,18 @@
 
 # MediaSearcher
 
-## 简介
+## 🆕简介
 
 MS是一个利用不同API提供商（如Pixabay、Unsplash、Pexels等）获取图片和视频的Python库。它允许用户通过统一的接口搜索不同源的媒体内容，支持异步搜索以提高性能，同时为将来可能集成的本地视觉模型和基于搜索引擎+AI的检索提供了扩展性。
 
-## 功能特性
+## 💡功能特性
 
 - **支持多个API提供商**：集成了多个流行的媒体内容API，如Pixabay、Unsplash和Pexels。
 - **异步搜索**：利用Python的异步能力，支持非阻塞的并发搜索。
 - **可扩展设计**：采用**策略模式**和**工厂模式**，易于添加新的媒体内容提供商或搜索策略。
 - **参数适配**：对于不同API接受的参数差异，提供了灵活的适配器来处理。(TODO)
 
-## 安装指南
+## 📖安装指南
 
 ```bash
 git clone https://github.com/rickywesker/MediaSearcher.git
@@ -30,7 +30,7 @@ cd MediaSearcher
 pip install -r requirements.txt
 ```
 
-## 使用方法
+## 👀使用方法
 
 使用媒体搜索客户端进行搜索的基本步骤如下：
 
@@ -58,7 +58,13 @@ images = search_cli.search(params, 'hybrid')
 
 ```
 
-## 代码结构
+## 📉异步同步效果比较
+
+### ⚡️Hybrid Mode
+
+![Result](../media/res.png)
+
+## 💻代码结构
 
 ```mermaid
 classDiagram
