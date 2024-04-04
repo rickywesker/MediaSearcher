@@ -4,7 +4,7 @@
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 </p>
 <p align="center">
-  Multi-platform supported.
+  Multiple data-platforms supported.
 </p>
 
 
@@ -18,6 +18,8 @@ MS是一个利用不同API提供商（如Pixabay、Unsplash、Pexels等）获取
 ## 💡功能特性
 
 - **支持多个API提供商**：集成了多个流行的媒体内容API，如Pixabay、Unsplash和Pexels。
+- **未来支持本地模型生成拓展** (TODO)
+- **未来支持搜索引擎+AI筛选拓展** (TODO)
 - **异步搜索**：利用Python的异步能力，支持非阻塞的并发搜索。
 - **可扩展设计**：采用**策略模式**和**工厂模式**，易于添加新的媒体内容提供商或搜索策略。
 - **参数适配**：对于不同API接受的参数差异，提供了灵活的适配器来处理。(TODO)
