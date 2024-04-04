@@ -25,8 +25,8 @@ MS是一个利用不同API提供商（如Pixabay、Unsplash、Pexels等）获取
 ## 安装指南
 
 ```bash
-git clone https://github.com/your_github/your_project_name.git
-cd your_project_name
+git clone https://github.com/rickywesker/MediaSearcher.git
+cd MediaSearcher
 pip install -r requirements.txt
 ```
 
@@ -36,7 +36,7 @@ pip install -r requirements.txt
 
 1. **初始化客户端**：选择合适的API提供商和API密钥初始化客户端。
 2. **执行搜索**：传入搜索参数，执行异步搜索操作。
-3. **处理结果**：获取搜索结果并进行处理。
+3. **处理结果**：获取搜索结果并进行处理。(TODO:目前为Raw content)
 
 ```python
 from MediaSearcher import SearchClient
