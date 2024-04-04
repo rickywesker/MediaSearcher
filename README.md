@@ -58,6 +58,65 @@ images = search_cli.search(params, 'hybrid')
 
 ```
 
+## 代码结构
+
+```mermaid
+classDiagram
+    class SearchStrategy {
+      <<interface>>
+      +fetch_media(query: dict) dict
+    }
+
+    class PixabayStrategy {
+      +fetch_media(query: dict) dict
+    }
+
+    class UnsplashStrategy {
+      +fetch_media(query: dict) dict
+    }
+
+    class PexelsStrategy {
+      +fetch_media(query: dict) dict
+    }
+
+    class MediaServiceFactory {
+      <<abstract>>
+      +create_search_strategy() SearchStrategy
+    }
+
+    class PixabayFactory {
+      +create_search_strategy() SearchStrategy
+    }
+
+    class UnsplashFactory {
+      +create_search_strategy() SearchStrategy
+    }
+
+    class PexelsFactory {
+      +create_search_strategy() SearchStrategy
+    }
+
+    class HybridSearchClient {
+      -strategy: SearchStrategy
+      +search(query: dict)
+    }
+
+    SearchStrategy <|.. PixabayStrategy: implements
+    SearchStrategy <|.. UnsplashStrategy: implements
+    SearchStrategy <|.. PexelsStrategy: implements
+
+    MediaServiceFactory <|-- PixabayFactory: extends
+    MediaServiceFactory <|-- UnsplashFactory: extends
+    MediaServiceFactory <|-- PexelsFactory: extends
+
+    HybridSearchClient --> MediaServiceFactory: uses
+
+```
+
+
+
+
+
 ## 贡献指南
 
 欢迎对项目做出贡献！如果你有好的意见或建议，请遵循以下步骤：

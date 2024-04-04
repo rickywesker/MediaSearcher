@@ -6,6 +6,12 @@ from ..strategies import (
     PexelsImageSearchStrategy,
     PexelsVideoSearchStrategy,
 )
+from abc import ABC, abstractmethod
+
+class MediaServiceFactory(ABC):
+    @abstractmethod
+    def get_media_service(service: str):
+        pass
 
 
 class PixabayFactory:
