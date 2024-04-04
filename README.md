@@ -92,6 +92,21 @@ classDiagram
       +NOT_YET_IMPLEMENTED() SearchStrategy
     }
 
+   
+
+    %% Relationships
+    SearchStrategy <|.. PixabayStrategy: implements
+    SearchStrategy <|.. UnsplashStrategy: implements
+    SearchStrategy <|.. PexelsStrategy: implements
+    SearchStrategy <|.. EngineBasedSearchStrategy: Not yet implemented
+    SearchStrategy <|.. ModelGeneratedSearchStrategy: Not yet implemented
+
+```
+
+```mermaid
+classDiagram
+    
+
     %% Abstract Factory
     class MediaServiceFactory {
       <<abstract>>
@@ -109,20 +124,13 @@ classDiagram
       +get_search_strategy() SearchStrategy
     }
 
-    %% Relationships
-    SearchStrategy <|.. PixabayStrategy: implements
-    SearchStrategy <|.. UnsplashStrategy: implements
-    SearchStrategy <|.. PexelsStrategy: implements
-    SearchStrategy <|.. EngineBasedSearchStrategy: Not yet implemented
-    SearchStrategy <|.. ModelGeneratedSearchStrategy: Not yet implemented
+
 
     MediaServiceFactory <|-- PixabayFactory: extends
     MediaServiceFactory <|-- UnsplashFactory: extends
     MediaServiceFactory <|-- PexelsFactory: extends
 
 ```
-
-
 
 
 
